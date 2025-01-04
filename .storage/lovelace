@@ -611,16 +611,36 @@
                   "name": " ",
                   "grid_options": {
                     "columns": 6,
-                    "rows": 4
+                    "rows": 5
                   }
                 },
                 {
+                  "features": [
+                    {
+                      "type": "fan-speed"
+                    }
+                  ],
+                  "type": "tile",
+                  "entity": "fan.living_room_air_purifier",
+                  "name": "Air Purifier",
+                  "icon": "",
+                  "state_content": [
+                    "state",
+                    "preset_mode"
+                  ]
+                },
+                {
+                  "features": [
+                    {
+                      "type": "select-options"
+                    }
+                  ],
                   "type": "tile",
                   "entity": "select.living_room_dehumidifier_timer",
                   "name": "Dehumidifier Timer",
                   "vertical": false,
                   "show_entity_picture": false,
-                  "hide_state": false
+                  "hide_state": true
                 }
               ],
               "column_span": 1
@@ -675,21 +695,6 @@
                   }
                 },
                 {
-                  "features": [
-                    {
-                      "type": "fan-speed"
-                    }
-                  ],
-                  "type": "tile",
-                  "entity": "fan.living_room_air_purifier",
-                  "name": "Air Purifier",
-                  "icon": "",
-                  "state_content": [
-                    "state",
-                    "preset_mode"
-                  ]
-                },
-                {
                   "type": "tile",
                   "entity": "light.christmas_tree",
                   "visibility": [
@@ -711,12 +716,41 @@
                   "heading": "Media"
                 },
                 {
-                  "type": "media-control",
-                  "entity": "media_player.living_room"
+                  "type": "tile",
+                  "entity": "media_player.living_room",
+                  "grid_options": {
+                    "columns": 12,
+                    "rows": 1
+                  },
+                  "show_entity_picture": true,
+                  "state_content": [
+                    "state",
+                    "media_title",
+                    "media_artist"
+                  ],
+                  "vertical": false,
+                  "name": "Apple TV"
                 },
                 {
-                  "type": "media-control",
-                  "entity": "media_player.living_room_echo_dot"
+                  "features": [
+                    {
+                      "type": "media-player-volume-slider"
+                    }
+                  ],
+                  "type": "tile",
+                  "entity": "media_player.living_room_echo_dot",
+                  "grid_options": {
+                    "columns": 12,
+                    "rows": 1
+                  },
+                  "show_entity_picture": true,
+                  "state_content": [
+                    "state",
+                    "media_title",
+                    "media_artist"
+                  ],
+                  "vertical": false,
+                  "name": "Echo Dot"
                 }
               ],
               "column_span": 1
@@ -947,8 +981,25 @@
                   "heading_style": "subtitle"
                 },
                 {
-                  "type": "media-control",
-                  "entity": "media_player.kitchen_echo_show"
+                  "features": [
+                    {
+                      "type": "media-player-volume-slider"
+                    }
+                  ],
+                  "type": "tile",
+                  "entity": "media_player.kitchen_echo_show",
+                  "grid_options": {
+                    "columns": 12,
+                    "rows": 1
+                  },
+                  "show_entity_picture": true,
+                  "state_content": [
+                    "state",
+                    "media_title",
+                    "media_artist"
+                  ],
+                  "vertical": false,
+                  "name": "Echo Show"
                 }
               ],
               "column_span": 1
@@ -1451,10 +1502,35 @@
                       "style": "dropdown"
                     }
                   ],
-                  "layout_options": {
-                    "grid_columns": 4,
-                    "grid_rows": 5
+                  "grid_options": {
+                    "columns": 6,
+                    "rows": 5
                   }
+                },
+                {
+                  "features": [
+                    {
+                      "type": "fan-speed"
+                    },
+                    {
+                      "type": "fan-preset-modes",
+                      "style": "dropdown"
+                    }
+                  ],
+                  "type": "tile",
+                  "entity": "fan.bedroom_air_purifier",
+                  "icon": "",
+                  "name": "Air Purifier",
+                  "state_content": [
+                    "state",
+                    "preset_mode"
+                  ],
+                  "grid_options": {
+                    "columns": 6,
+                    "rows": 5
+                  },
+                  "show_entity_picture": false,
+                  "vertical": true
                 }
               ],
               "column_span": 1
@@ -1465,21 +1541,6 @@
                 {
                   "type": "heading",
                   "heading": "Devices"
-                },
-                {
-                  "features": [
-                    {
-                      "type": "fan-speed"
-                    }
-                  ],
-                  "type": "tile",
-                  "entity": "fan.bedroom_air_purifier",
-                  "icon": "",
-                  "name": "Air Purifier",
-                  "state_content": [
-                    "state",
-                    "preset_mode"
-                  ]
                 },
                 {
                   "type": "tile",
@@ -1498,14 +1559,8 @@
                     }
                   ],
                   "type": "tile",
-                  "entity": "light.neils_desk_filament_light",
-                  "name": "Desk Filament Light"
-                },
-                {
-                  "type": "tile",
-                  "entity": "light.neil_s_monitor_light_bar",
-                  "name": "Monitor Light Bar",
-                  "vertical": false
+                  "entity": "light.bedroom_mirror_light",
+                  "name": "Mirror Light"
                 },
                 {
                   "features": [
@@ -1514,8 +1569,7 @@
                     }
                   ],
                   "type": "tile",
-                  "entity": "light.bedroom_mirror_light",
-                  "name": "Mirror Light"
+                  "entity": "light.heathers_bedside_light"
                 },
                 {
                   "features": [
@@ -1533,7 +1587,18 @@
                     }
                   ],
                   "type": "tile",
-                  "entity": "light.heathers_bedside_light"
+                  "entity": "light.neils_desk_filament_light",
+                  "name": "Desk Filament Light"
+                },
+                {
+                  "type": "tile",
+                  "entity": "light.neil_s_monitor_light_bar",
+                  "name": "Monitor Light Bar",
+                  "vertical": false,
+                  "grid_options": {
+                    "columns": 6,
+                    "rows": 2
+                  }
                 }
               ],
               "column_span": 1
@@ -1546,12 +1611,41 @@
                   "heading": "Media"
                 },
                 {
-                  "type": "media-control",
-                  "entity": "media_player.bedroom"
+                  "type": "tile",
+                  "entity": "media_player.bedroom",
+                  "grid_options": {
+                    "columns": 12,
+                    "rows": 1
+                  },
+                  "show_entity_picture": true,
+                  "hide_state": false,
+                  "state_content": [
+                    "state",
+                    "media_title",
+                    "media_artist"
+                  ],
+                  "name": "Apple TV"
                 },
                 {
-                  "type": "media-control",
-                  "entity": "media_player.bedroom_echo_pop"
+                  "features": [
+                    {
+                      "type": "media-player-volume-slider"
+                    }
+                  ],
+                  "type": "tile",
+                  "entity": "media_player.bedroom_echo_pop",
+                  "grid_options": {
+                    "columns": 12,
+                    "rows": 2
+                  },
+                  "show_entity_picture": true,
+                  "hide_state": false,
+                  "state_content": [
+                    "state",
+                    "media_title",
+                    "media_artist"
+                  ],
+                  "name": "Echo Pop"
                 }
               ],
               "column_span": 1
@@ -1681,7 +1775,27 @@
                   "name": " ",
                   "show_current_as_primary": false,
                   "grid_options": {
-                    "columns": 12,
+                    "columns": 6,
+                    "rows": 5
+                  }
+                },
+                {
+                  "features": [
+                    {
+                      "type": "fan-speed"
+                    },
+                    {
+                      "type": "fan-preset-modes",
+                      "style": "dropdown"
+                    }
+                  ],
+                  "type": "tile",
+                  "entity": "fan.boys_bedroom_air_purifier",
+                  "state_content": "state",
+                  "name": "Air Purifier",
+                  "vertical": true,
+                  "grid_options": {
+                    "columns": 6,
                     "rows": 5
                   }
                 }
@@ -1694,20 +1808,6 @@
                 {
                   "type": "heading",
                   "heading": "Devices"
-                },
-                {
-                  "features": [
-                    {
-                      "type": "fan-speed"
-                    }
-                  ],
-                  "type": "tile",
-                  "entity": "fan.boys_bedroom_air_purifier",
-                  "state_content": [
-                    "state",
-                    "preset_mode"
-                  ],
-                  "name": "Air Purifier"
                 },
                 {
                   "type": "tile",
@@ -1749,8 +1849,25 @@
                   "heading": "Media"
                 },
                 {
-                  "type": "media-control",
-                  "entity": "media_player.boys_echo_dot"
+                  "type": "tile",
+                  "entity": "media_player.boys_echo_dot",
+                  "grid_options": {
+                    "columns": 12,
+                    "rows": 1
+                  },
+                  "show_entity_picture": true,
+                  "hide_state": false,
+                  "state_content": [
+                    "state",
+                    "media_title",
+                    "media_artist"
+                  ],
+                  "name": "Echo Dot",
+                  "features": [
+                    {
+                      "type": "media-player-volume-slider"
+                    }
+                  ]
                 }
               ],
               "column_span": 1
@@ -1917,12 +2034,41 @@
                   "heading": "Media"
                 },
                 {
-                  "type": "media-control",
-                  "entity": "media_player.ben_s_bedroom_firetvstick"
+                  "type": "tile",
+                  "entity": "media_player.ben_s_bedroom_firetvstick",
+                  "grid_options": {
+                    "columns": 12,
+                    "rows": 1
+                  },
+                  "show_entity_picture": true,
+                  "hide_state": false,
+                  "state_content": [
+                    "state",
+                    "media_title",
+                    "media_artist"
+                  ],
+                  "name": "Fire TV Stick"
                 },
                 {
-                  "type": "media-control",
-                  "entity": "media_player.ben_s_echo_dot"
+                  "features": [
+                    {
+                      "type": "media-player-volume-slider"
+                    }
+                  ],
+                  "type": "tile",
+                  "entity": "media_player.ben_s_echo_dot",
+                  "grid_options": {
+                    "columns": 12,
+                    "rows": 1
+                  },
+                  "show_entity_picture": true,
+                  "hide_state": false,
+                  "state_content": [
+                    "state",
+                    "media_title",
+                    "media_artist"
+                  ],
+                  "name": "Echo Dot"
                 }
               ],
               "column_span": 1
