@@ -13,6 +13,13 @@ automation: !include automations.yaml
 script: !include scripts.yaml
 scene: !include scenes.yaml
 
+# Recorder
+
+recorder:
+  exclude:
+    entity_globs:
+      - sensor.everything_presence_lite*target*
+
 # Flux
 switch:
   - platform: flux

@@ -31,9 +31,9 @@
                     "action": "navigate",
                     "navigation_path": "/lovelace/lights"
                   },
-                  "layout_options": {
-                    "grid_columns": 1,
-                    "grid_rows": 2
+                  "grid_options": {
+                    "columns": 3,
+                    "rows": 2
                   }
                 },
                 {
@@ -841,7 +841,7 @@
                   "color": "primary"
                 }
               ],
-              "column_span": 1
+              "column_span": 2
             }
           ],
           "dense_section_placement": false,
@@ -1172,7 +1172,8 @@
               "show_name": false,
               "show_state": true,
               "show_icon": true,
-              "entity": "sensor.average_indoor_temperature"
+              "entity": "sensor.average_downstairs_temperature",
+              "color": ""
             }
           ]
         },
@@ -1441,7 +1442,7 @@
                   "state_content": "last_changed"
                 }
               ],
-              "column_span": 1
+              "column_span": 2
             }
           ],
           "icon": "mdi:stairs-up",
@@ -1716,7 +1717,7 @@
                   "state_content": "last_changed"
                 }
               ],
-              "column_span": 1
+              "column_span": 2
             }
           ],
           "cards": [],
@@ -2424,7 +2425,7 @@
                   "entity": "light.garden_light"
                 }
               ],
-              "column_span": 1
+              "column_span": 2
             },
             {
               "type": "grid",
@@ -2478,7 +2479,7 @@
                   "entity": "sensor.ben_s_bedroom_dimmer_switch_battery"
                 }
               ],
-              "column_span": 1
+              "column_span": 2
             }
           ],
           "cards": [],
@@ -2615,13 +2616,7 @@
                     "grid_columns": 2,
                     "grid_rows": 3
                   }
-                }
-              ],
-              "column_span": 1
-            },
-            {
-              "type": "grid",
-              "cards": [
+                },
                 {
                   "features": [
                     {
@@ -2691,12 +2686,7 @@
                     "grid_columns": 2,
                     "grid_rows": 3
                   }
-                }
-              ]
-            },
-            {
-              "type": "grid",
-              "cards": [
+                },
                 {
                   "features": [
                     {
@@ -2767,7 +2757,8 @@
                     "grid_rows": 3
                   }
                 }
-              ]
+              ],
+              "column_span": 2
             },
             {
               "type": "grid",
@@ -2789,46 +2780,6 @@
                   "hide_assignments": false,
                   "hide_hw_schedule": false,
                   "name": " "
-                }
-              ],
-              "column_span": 1
-            },
-            {
-              "type": "grid",
-              "cards": [
-                {
-                  "type": "heading",
-                  "heading": "Battery Status"
-                },
-                {
-                  "type": "tile",
-                  "entity": "sensor.wiser_itrv_living_room_battery",
-                  "name": "Living Room"
-                },
-                {
-                  "type": "tile",
-                  "entity": "sensor.wiser_itrv_kitchen_battery",
-                  "name": "Kitchen"
-                },
-                {
-                  "type": "tile",
-                  "entity": "sensor.wiser_itrv_bathroom_battery",
-                  "name": "Bathroom"
-                },
-                {
-                  "type": "tile",
-                  "entity": "sensor.wiser_itrv_bedroom_battery",
-                  "name": "Bedroom"
-                },
-                {
-                  "type": "tile",
-                  "entity": "sensor.wiser_itrv_boys_bedroom_battery",
-                  "name": "Boys' Bedroom"
-                },
-                {
-                  "type": "tile",
-                  "entity": "sensor.wiser_itrv_ben_s_bedroom_battery",
-                  "name": "Ben's Bedroom"
                 }
               ],
               "column_span": 1
@@ -2915,7 +2866,47 @@
                   "name": "Ben's Bedroom Signal"
                 }
               ],
-              "column_span": 1
+              "column_span": 2
+            },
+            {
+              "type": "grid",
+              "cards": [
+                {
+                  "type": "heading",
+                  "heading": "Battery Status"
+                },
+                {
+                  "type": "tile",
+                  "entity": "sensor.wiser_itrv_living_room_battery",
+                  "name": "Living Room"
+                },
+                {
+                  "type": "tile",
+                  "entity": "sensor.wiser_itrv_kitchen_battery",
+                  "name": "Kitchen"
+                },
+                {
+                  "type": "tile",
+                  "entity": "sensor.wiser_itrv_bathroom_battery",
+                  "name": "Bathroom"
+                },
+                {
+                  "type": "tile",
+                  "entity": "sensor.wiser_itrv_bedroom_battery",
+                  "name": "Bedroom"
+                },
+                {
+                  "type": "tile",
+                  "entity": "sensor.wiser_itrv_boys_bedroom_battery",
+                  "name": "Boys' Bedroom"
+                },
+                {
+                  "type": "tile",
+                  "entity": "sensor.wiser_itrv_ben_s_bedroom_battery",
+                  "name": "Ben's Bedroom"
+                }
+              ],
+              "column_span": 2
             }
           ],
           "badges": [
@@ -3001,224 +2992,6 @@
                   "layout_options": {
                     "grid_columns": "full"
                   }
-                }
-              ],
-              "column_span": 1
-            },
-            {
-              "type": "grid",
-              "cards": [
-                {
-                  "type": "heading",
-                  "heading": "Occupancy"
-                },
-                {
-                  "type": "history-graph",
-                  "entities": [
-                    {
-                      "entity": "binary_sensor.apollo_msr_1_38c3bc_radar_target",
-                      "name": "Hall"
-                    },
-                    {
-                      "entity": "binary_sensor.everything_presence_lite_214fd8_occupancy",
-                      "name": "Kitchen"
-                    },
-                    {
-                      "entity": "binary_sensor.everything_presence_lite_ccb890_occupancy",
-                      "name": "Living Room"
-                    },
-                    {
-                      "entity": "binary_sensor.everything_presence_lite_5ba230_occupancy",
-                      "name": "Bedroom"
-                    },
-                    {
-                      "entity": "binary_sensor.everything_presence_lite_cbaa7c_occupancy",
-                      "name": "Boys' Bedroom"
-                    },
-                    {
-                      "entity": "binary_sensor.everything_presence_lite_8fae78_occupancy",
-                      "name": "Ben's Bedroom"
-                    }
-                  ],
-                  "hours_to_show": 8
-                }
-              ],
-              "column_span": 1
-            },
-            {
-              "type": "grid",
-              "cards": [
-                {
-                  "type": "heading",
-                  "heading": "Motion Sensors"
-                },
-                {
-                  "type": "tile",
-                  "entity": "binary_sensor.living_room_motion_sensor",
-                  "name": "Living Room",
-                  "state_content": "last-changed",
-                  "color": "primary"
-                },
-                {
-                  "type": "tile",
-                  "entity": "binary_sensor.kitchen_motion_sensor",
-                  "name": "Kitchen",
-                  "state_content": "last-changed",
-                  "color": "primary"
-                },
-                {
-                  "type": "tile",
-                  "entity": "binary_sensor.utility_room_motion_sensor",
-                  "name": "Utility Room",
-                  "state_content": "last-changed",
-                  "color": "primary"
-                },
-                {
-                  "type": "tile",
-                  "entity": "binary_sensor.hall_motion_sensor",
-                  "name": "Hall",
-                  "state_content": "last-changed",
-                  "color": "primary"
-                },
-                {
-                  "type": "tile",
-                  "entity": "binary_sensor.landing_motion_sensor",
-                  "name": "Landing",
-                  "state_content": "last-changed",
-                  "color": "primary"
-                },
-                {
-                  "type": "tile",
-                  "entity": "binary_sensor.bedroom_motion_sensor",
-                  "name": "Bedroom",
-                  "state_content": "last-changed",
-                  "color": "primary"
-                },
-                {
-                  "type": "tile",
-                  "entity": "binary_sensor.boys_bedroom_motion_sensor",
-                  "name": "Boys' Bedroom",
-                  "state_content": "last-changed",
-                  "color": "primary"
-                },
-                {
-                  "type": "tile",
-                  "entity": "binary_sensor.ben_s_bedroom_motion_sensor",
-                  "name": "Ben's Bedroom",
-                  "state_content": "last-changed",
-                  "color": "primary"
-                }
-              ],
-              "column_span": 1
-            },
-            {
-              "type": "grid",
-              "cards": [
-                {
-                  "type": "heading",
-                  "heading": "Door Sensors"
-                },
-                {
-                  "type": "tile",
-                  "entity": "binary_sensor.back_door",
-                  "state_content": "last_changed"
-                },
-                {
-                  "type": "tile",
-                  "entity": "binary_sensor.front_door",
-                  "state_content": "last_changed"
-                },
-                {
-                  "type": "tile",
-                  "entity": "binary_sensor.out_building_door",
-                  "state_content": "last_changed"
-                },
-                {
-                  "type": "tile",
-                  "entity": "binary_sensor.side_gate",
-                  "state_content": "last_changed"
-                }
-              ],
-              "column_span": 1
-            },
-            {
-              "type": "grid",
-              "cards": [
-                {
-                  "type": "heading",
-                  "heading": "Window Sensors"
-                },
-                {
-                  "type": "tile",
-                  "entity": "binary_sensor.living_room_window_awning_left",
-                  "state_content": "last-changed",
-                  "color": "primary",
-                  "name": "Left Living Room Awning Window"
-                },
-                {
-                  "type": "tile",
-                  "entity": "binary_sensor.living_room_window_awning_right",
-                  "state_content": "last-changed",
-                  "color": "primary",
-                  "name": "Right Living Room Awning Window"
-                },
-                {
-                  "type": "tile",
-                  "entity": "binary_sensor.living_room_window_casement_left",
-                  "state_content": "last-changed",
-                  "color": "primary",
-                  "name": "Left Living Room Casement Window"
-                },
-                {
-                  "type": "tile",
-                  "entity": "binary_sensor.living_room_window_casement_right",
-                  "state_content": "last-changed",
-                  "color": "primary",
-                  "name": "Right Living Room Casement Window"
-                },
-                {
-                  "type": "tile",
-                  "entity": "binary_sensor.kitchen_window",
-                  "state_content": "last-changed",
-                  "color": "primary"
-                },
-                {
-                  "type": "tile",
-                  "entity": "binary_sensor.utility_room_window",
-                  "state_content": "last-changed",
-                  "color": "primary"
-                },
-                {
-                  "type": "tile",
-                  "entity": "binary_sensor.bathroom_window",
-                  "state_content": "last-changed",
-                  "color": "primary"
-                },
-                {
-                  "type": "tile",
-                  "entity": "binary_sensor.landing_window",
-                  "state_content": "last-changed",
-                  "color": "primary"
-                },
-                {
-                  "type": "tile",
-                  "entity": "binary_sensor.boys_bedroom_window_awning",
-                  "state_content": "last-changed",
-                  "color": "primary",
-                  "name": "Boys' Bedroom Awning Window"
-                },
-                {
-                  "type": "tile",
-                  "entity": "binary_sensor.boys_bedroom_window_casement",
-                  "state_content": "last-changed",
-                  "color": "primary",
-                  "name": "Boys' Bedroom Casement Window"
-                },
-                {
-                  "type": "tile",
-                  "entity": "binary_sensor.bedroom_window_left",
-                  "state_content": "last-changed",
-                  "color": "primary"
                 }
               ],
               "column_span": 1
@@ -3353,6 +3126,228 @@
                 }
               ],
               "column_span": 1
+            },
+            {
+              "type": "grid",
+              "cards": [
+                {
+                  "type": "heading",
+                  "heading": "Motion Sensors"
+                },
+                {
+                  "type": "tile",
+                  "entity": "binary_sensor.living_room_motion_sensor",
+                  "name": "Living Room",
+                  "state_content": "last-changed",
+                  "color": "primary"
+                },
+                {
+                  "type": "tile",
+                  "entity": "binary_sensor.kitchen_motion_sensor",
+                  "name": "Kitchen",
+                  "state_content": "last-changed",
+                  "color": "primary"
+                },
+                {
+                  "type": "tile",
+                  "entity": "binary_sensor.utility_room_motion_sensor",
+                  "name": "Utility Room",
+                  "state_content": "last-changed",
+                  "color": "primary"
+                },
+                {
+                  "type": "tile",
+                  "entity": "binary_sensor.hall_motion_sensor",
+                  "name": "Hall",
+                  "state_content": "last-changed",
+                  "color": "primary"
+                },
+                {
+                  "type": "tile",
+                  "entity": "binary_sensor.landing_motion_sensor",
+                  "name": "Landing",
+                  "state_content": "last-changed",
+                  "color": "primary"
+                },
+                {
+                  "type": "tile",
+                  "entity": "binary_sensor.bedroom_motion_sensor",
+                  "name": "Bedroom",
+                  "state_content": "last-changed",
+                  "color": "primary"
+                },
+                {
+                  "type": "tile",
+                  "entity": "binary_sensor.boys_bedroom_motion_sensor",
+                  "name": "Boys' Bedroom",
+                  "state_content": "last-changed",
+                  "color": "primary"
+                },
+                {
+                  "type": "tile",
+                  "entity": "binary_sensor.ben_s_bedroom_motion_sensor",
+                  "name": "Ben's Bedroom",
+                  "state_content": "last-changed",
+                  "color": "primary"
+                }
+              ],
+              "column_span": 2
+            },
+            {
+              "type": "grid",
+              "cards": [
+                {
+                  "type": "heading",
+                  "heading": "Door Sensors"
+                },
+                {
+                  "type": "tile",
+                  "entity": "binary_sensor.back_door",
+                  "state_content": "last_changed"
+                },
+                {
+                  "type": "tile",
+                  "entity": "binary_sensor.front_door",
+                  "state_content": "last_changed"
+                },
+                {
+                  "type": "tile",
+                  "entity": "binary_sensor.out_building_door",
+                  "state_content": "last_changed"
+                },
+                {
+                  "type": "tile",
+                  "entity": "binary_sensor.side_gate",
+                  "state_content": "last_changed"
+                }
+              ],
+              "column_span": 2
+            },
+            {
+              "type": "grid",
+              "cards": [
+                {
+                  "type": "heading",
+                  "heading": "Window Sensors"
+                },
+                {
+                  "type": "tile",
+                  "entity": "binary_sensor.living_room_window_awning_left",
+                  "state_content": "last-changed",
+                  "color": "primary",
+                  "name": "Left Living Room Awning Window"
+                },
+                {
+                  "type": "tile",
+                  "entity": "binary_sensor.living_room_window_awning_right",
+                  "state_content": "last-changed",
+                  "color": "primary",
+                  "name": "Right Living Room Awning Window"
+                },
+                {
+                  "type": "tile",
+                  "entity": "binary_sensor.living_room_window_casement_left",
+                  "state_content": "last-changed",
+                  "color": "primary",
+                  "name": "Left Living Room Casement Window"
+                },
+                {
+                  "type": "tile",
+                  "entity": "binary_sensor.living_room_window_casement_right",
+                  "state_content": "last-changed",
+                  "color": "primary",
+                  "name": "Right Living Room Casement Window"
+                },
+                {
+                  "type": "tile",
+                  "entity": "binary_sensor.kitchen_window",
+                  "state_content": "last-changed",
+                  "color": "primary"
+                },
+                {
+                  "type": "tile",
+                  "entity": "binary_sensor.utility_room_window",
+                  "state_content": "last-changed",
+                  "color": "primary"
+                },
+                {
+                  "type": "tile",
+                  "entity": "binary_sensor.bathroom_window",
+                  "state_content": "last-changed",
+                  "color": "primary"
+                },
+                {
+                  "type": "tile",
+                  "entity": "binary_sensor.landing_window",
+                  "state_content": "last-changed",
+                  "color": "primary"
+                },
+                {
+                  "type": "tile",
+                  "entity": "binary_sensor.boys_bedroom_window_awning",
+                  "state_content": "last-changed",
+                  "color": "primary",
+                  "name": "Boys' Bedroom Awning Window"
+                },
+                {
+                  "type": "tile",
+                  "entity": "binary_sensor.boys_bedroom_window_casement",
+                  "state_content": "last-changed",
+                  "color": "primary",
+                  "name": "Boys' Bedroom Casement Window"
+                },
+                {
+                  "type": "tile",
+                  "entity": "binary_sensor.bedroom_window_left",
+                  "state_content": "last-changed",
+                  "color": "primary"
+                }
+              ],
+              "column_span": 2
+            },
+            {
+              "type": "grid",
+              "cards": [
+                {
+                  "type": "heading",
+                  "heading": "Occupancy"
+                },
+                {
+                  "type": "history-graph",
+                  "entities": [
+                    {
+                      "entity": "binary_sensor.apollo_msr_1_38c3bc_radar_target",
+                      "name": "Hall"
+                    },
+                    {
+                      "entity": "binary_sensor.everything_presence_lite_214fd8_occupancy",
+                      "name": "Kitchen"
+                    },
+                    {
+                      "entity": "binary_sensor.everything_presence_lite_ccb890_occupancy",
+                      "name": "Living Room"
+                    },
+                    {
+                      "entity": "binary_sensor.everything_presence_lite_5ba230_occupancy",
+                      "name": "Bedroom"
+                    },
+                    {
+                      "entity": "binary_sensor.everything_presence_lite_cbaa7c_occupancy",
+                      "name": "Boys' Bedroom"
+                    },
+                    {
+                      "entity": "binary_sensor.everything_presence_lite_8fae78_occupancy",
+                      "name": "Ben's Bedroom"
+                    }
+                  ],
+                  "hours_to_show": 8,
+                  "grid_options": {
+                    "columns": 24,
+                    "rows": "auto"
+                  }
+                }
+              ],
+              "column_span": 2
             },
             {
               "type": "grid",
@@ -3494,7 +3489,8 @@
                   "type": "tile",
                   "entity": "sensor.washing_machine_door_battery"
                 }
-              ]
+              ],
+              "column_span": 2
             }
           ],
           "cards": [],

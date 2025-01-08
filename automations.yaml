@@ -1227,12 +1227,13 @@
         below: 0.4
         enabled: true
       sequence:
-      - data:
-          color_temp: 500
+      - action: light.turn_on
+        metadata: {}
+        data:
           brightness_pct: 1
+          kelvin: 2000
         target:
           entity_id: light.bedroom_mirror_light
-        action: light.turn_on
     - conditions:
       - condition: trigger
         id: '2'
@@ -1378,6 +1379,11 @@
     - sensor.everything_presence_lite_2fbc58_illuminance
     above: 0.3
     id: '2'
+  - trigger: numeric_state
+    entity_id:
+    - sensor.everything_presence_lite_2fbc58_illuminance
+    id: '1'
+    below: 0.3
   conditions: []
   actions:
   - choose:
@@ -1388,6 +1394,9 @@
       - condition: numeric_state
         entity_id: sensor.everything_presence_lite_2fbc58_illuminance
         below: 0.3
+      - condition: state
+        entity_id: binary_sensor.everything_presence_lite_2fbc58_occupancy
+        state: 'on'
       sequence:
       - action: light.turn_on
         metadata: {}
@@ -1626,7 +1635,7 @@
     at: 08:00:00
   conditions:
   - condition: state
-    entity_id: binary_sensor.bluespike_kyle_s_mac_mini_wireless_connected
+    entity_id: binary_sensor.kyles_mac_mini_wireless_connected
     state: 'on'
   - condition: time
     weekday:
@@ -1695,7 +1704,7 @@
           milliseconds: 0
       while:
       - condition: state
-        entity_id: binary_sensor.bluespike_kyle_s_mac_mini_wireless_connected
+        entity_id: binary_sensor.kyles_mac_mini_wireless_connected
         state: 'on'
   mode: restart
 - id: '1671535300084'
@@ -2922,16 +2931,16 @@
 - id: '1682271731019'
   alias: Boys' Bedroom - Lighting - Liam's Light Bar Computer
   description: ''
-  trigger:
+  triggers:
   - trigger: state
     entity_id:
-    - binary_sensor.bluespike_liam_s_pc_wireless_connected
+    - binary_sensor.liam_s_pc_wireless_connected
     from: 'off'
     to: 'on'
     id: '1'
   - trigger: state
     entity_id:
-    - binary_sensor.bluespike_liam_s_pc_wireless_connected
+    - binary_sensor.liam_s_pc_wireless_connected
     from: 'on'
     to: 'off'
     id: '2'
@@ -2939,8 +2948,8 @@
       hours: 0
       minutes: 0
       seconds: 0
-  condition: []
-  action:
+  conditions: []
+  actions:
   - choose:
     - conditions:
       - condition: trigger
@@ -2977,10 +2986,10 @@
 - id: '1682938342989'
   alias: Bedroom - Lighting - Neil Work Lights - Computer
   description: ''
-  trigger:
+  triggers:
   - trigger: state
     entity_id:
-    - binary_sensor.bluespike_l1fwcyfgxnmbp_284660_wireless_connected
+    - binary_sensor.l1fwcyfgxnmbp_331325_wireless_connected
     from: 'off'
     to: 'on'
     id: '1'
@@ -2990,7 +2999,7 @@
       seconds: 15
   - trigger: state
     entity_id:
-    - binary_sensor.bluespike_l1fwcyfgxnmbp_284660_wireless_connected
+    - binary_sensor.l1fwcyfgxnmbp_331325_wireless_connected
     from: 'on'
     to: 'off'
     id: '2'
@@ -3000,8 +3009,8 @@
     from: 'on'
     to: 'off'
     id: '2'
-  condition: []
-  action:
+  conditions: []
+  actions:
   - choose:
     - conditions:
       - condition: state
@@ -4056,44 +4065,47 @@
       - update.hall_presence_sensor_firmware
       - update.ben_s_bedroom_presence_sensor_firmware
       - update.heather_s_cpap_machine_firmware
+      - update.kitchen_bluetooth_proxy_firmware
+      - update.landing_bluetooth_proxy_firmware
       mobile_app_device: 6f7b01aaeab2f76775d41dd43d1d3413
       mobile_app_device_2: 6f7b01aaeab2f76775d41dd43d1d3413
       run_config_check: true
 - id: '1712408109712'
   alias: Boys' Bedroom - Liam's PC - Pause Wi-Fi
   description: ''
-  trigger:
+  triggers:
   - trigger: time_pattern
     hours: '21'
     minutes: /15
-  condition:
+  conditions:
   - condition: state
-    entity_id: binary_sensor.bluespike_liam_s_pc_wireless_connected
+    entity_id: binary_sensor.liam_s_pc_wireless_connected
     state: 'on'
   - condition: time
     after: '21:01:00'
-  action:
+  actions:
   - action: switch.turn_on
     metadata: {}
     data: {}
     target:
-      entity_id: switch.bluespike_liam_s_pc_wireless_paused
+      entity_id:
+      - switch.liam_s_pc_wireless_paused
   mode: single
 - id: '1712408175901'
   alias: Boys' Bedroom - Liam's PC - Resume Wi-Fi
   description: ''
-  trigger:
+  triggers:
   - trigger: time
     at: 00:00:00
-  condition:
+  conditions:
   - condition: state
-    entity_id: switch.bluespike_liam_s_pc_wireless_paused
+    entity_id: switch.liam_s_pc_wireless_paused
     state: 'on'
-  action:
+  actions:
   - action: switch.turn_off
     target:
       entity_id:
-      - switch.bluespike_liam_s_pc_wireless_paused
+      - switch.liam_s_pc_wireless_paused
     data: {}
   mode: single
 - id: '1714128991962'
@@ -4222,17 +4234,17 @@
 - id: '1727710355482'
   alias: Bedroom - Lighting - Neil's Work Lights On When Light On
   description: ''
-  trigger:
+  triggers:
   - trigger: state
     entity_id:
     - light.bedroom_light
     from: 'off'
     to: 'on'
-  condition:
+  conditions:
   - condition: state
-    entity_id: binary_sensor.bluespike_l1fwcyfgxnmbp_284660_wireless_connected
+    entity_id: binary_sensor.l1fwcyfgxnmbp_331325_wireless_connected
     state: 'on'
-  action:
+  actions:
   - action: light.turn_on
     data: {}
     target:
@@ -4691,4 +4703,42 @@
       - condition: state
         entity_id: binary_sensor.landing_dehumidifier_tank
         state: 'off'
+  mode: single
+- id: '1736099561646'
+  alias: Home - Wanker - Notify
+  description: ''
+  triggers:
+  - trigger: state
+    entity_id:
+    - person.ben
+    from: not_home
+    to: home
+  conditions:
+  - condition: state
+    entity_id: person.neil
+    state: home
+  actions:
+  - action: notify.mobile_app_neils_iphone
+    metadata: {}
+    data:
+      message: Wanker!
+  mode: single
+- id: '1736099762435'
+  alias: Home - Good Times - Notification
+  description: ''
+  triggers:
+  - trigger: state
+    entity_id:
+    - person.ben
+    to: not_home
+    from: home
+  conditions:
+  - condition: state
+    entity_id: person.neil
+    state: home
+  actions:
+  - action: notify.mobile_app_neils_iphone
+    metadata: {}
+    data:
+      message: Good times!
   mode: single
